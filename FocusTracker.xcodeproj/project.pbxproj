@@ -18,6 +18,7 @@
 		DA481A511B4DF43700A3B37D /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA481A4C1B4DF43700A3B37D /* ResultsTableViewController.swift */; };
 		DA481A521B4DF43700A3B37D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA481A4D1B4DF43700A3B37D /* ResultsViewController.swift */; };
 		DA481A551B4DF46700A3B37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA481A541B4DF46700A3B37D /* Main.storyboard */; };
+		DAB2EE0B1B4F1C2E0017263C /* Pods_FocusTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BAA01F35475148533671EB /* Pods_FocusTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAB7EAD31B4DF069003E39C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAD21B4DF069003E39C7 /* AppDelegate.swift */; };
 		DAB7EAD51B4DF069003E39C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAD41B4DF069003E39C7 /* ViewController.swift */; };
 		DAB7EADB1B4DF069003E39C7 /* FocusTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAD91B4DF069003E39C7 /* FocusTracker.xcdatamodeld */; };
@@ -43,6 +44,19 @@
 			remoteInfo = FocusTracker;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DAB2EE0A1B4F1C0E0017263C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DAB2EE0B1B4F1C2E0017263C /* Pods_FocusTracker.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		08BAA01F35475148533671EB /* Pods_FocusTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FocusTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +215,7 @@
 				DAB7EACD1B4DF069003E39C7 /* Resources */,
 				EAAA9C1408C9BE0383B2049E /* Embed Pods Frameworks */,
 				16D1965D3B4DB4226710AEB7 /* Copy Pods Resources */,
+				DAB2EE0A1B4F1C0E0017263C /* CopyFiles */,
 			);
 			buildRules = (
 			);
