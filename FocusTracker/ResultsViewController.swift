@@ -425,6 +425,8 @@ class ResultsViewController: UIViewController{
         
         
 //        // MARK: CHARTING
+        //This if statement is for initializing. Otherwise the for loop crashes when there are no events stored
+        if (hourOfPreviousElement == -1) {xMin = 7; xMax = 11}
         
                 for i in xMin...xMax {
         

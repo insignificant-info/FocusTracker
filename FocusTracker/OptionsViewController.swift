@@ -128,7 +128,7 @@ class OptionsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             scaleSets.toPassSleep = scaleValues.sleepiness
             scaleSets.toPassMotivation = scaleValues.motivation
             
-            print("return segue \(mainControllerHiddenStates.start)")
+            print("return segue \(mainControllerHiddenStates.start)", appendNewline: false)
             
             let hiddenButtonStates = segue.destinationViewController as! ViewController;
             hiddenButtonStates.hiddenStates.start = mainControllerHiddenStates.start
