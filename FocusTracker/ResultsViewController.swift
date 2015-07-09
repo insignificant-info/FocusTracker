@@ -308,7 +308,10 @@ class ResultsViewController: UIViewController{
         var hourOfPreviousElement = -1 //initialize with a value that can't be associated with an hour
         var labels: Array<Int> = []
         var labelsAsString: Array<String> = []
+
         var models: [(x: CGFloat, y: CGFloat, type: MyExampleModelDataType)] = []
+        
+
         
         var xMin = 24
         var xMax = 0
@@ -378,12 +381,14 @@ class ResultsViewController: UIViewController{
                     if controlIndex == 0 {
 //                        dataSeries1X.append(Double(hourOfPreviousElement))
 //                        dataSeries1Y.append(yValue)
-                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: .Type1)
+
+                  
+                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: MyExampleModelDataType.Type1)
                        
                     } else {
 //                        dataSeries2X.append(Double(hourOfPreviousElement))
 //                        dataSeries2Y.append(yValue)
-                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: .Type2)
+                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: MyExampleModelDataType.Type2)
                     }
                     
                     if index != (dateAssociatedWithMinuteChunks.count - 1) {

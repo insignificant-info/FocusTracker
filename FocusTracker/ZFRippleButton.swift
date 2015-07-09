@@ -59,8 +59,8 @@ class ZFRippleButton: UIButton {
             }
         }
     }
-    
-    required init(coder aDecoder: NSCoder) {
+    // Note that ? was added here due to "A non-failable initializer cannot chain to failable initializer 'init(coder:)' written with 'init?'" error
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
