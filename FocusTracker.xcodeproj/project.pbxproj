@@ -17,7 +17,6 @@
 		DA481A501B4DF43700A3B37D /* PushButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA481A4B1B4DF43700A3B37D /* PushButtonView.swift */; };
 		DA481A511B4DF43700A3B37D /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA481A4C1B4DF43700A3B37D /* ResultsTableViewController.swift */; };
 		DA481A521B4DF43700A3B37D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA481A4D1B4DF43700A3B37D /* ResultsViewController.swift */; };
-		DA481A551B4DF46700A3B37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA481A541B4DF46700A3B37D /* Main.storyboard */; };
 		DAB2EE0B1B4F1C2E0017263C /* Pods_FocusTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08BAA01F35475148533671EB /* Pods_FocusTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DAB7EAD31B4DF069003E39C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAD21B4DF069003E39C7 /* AppDelegate.swift */; };
 		DAB7EAD51B4DF069003E39C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAD41B4DF069003E39C7 /* ViewController.swift */; };
@@ -26,6 +25,8 @@
 		DAB7EAE01B4DF069003E39C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB7EADE1B4DF069003E39C7 /* LaunchScreen.storyboard */; };
 		DAB7EAEB1B4DF069003E39C7 /* FocusTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAEA1B4DF069003E39C7 /* FocusTrackerTests.swift */; };
 		DAB7EAF61B4DF069003E39C7 /* FocusTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7EAF51B4DF069003E39C7 /* FocusTrackerUITests.swift */; };
+		DAD7C2721B8B780800D6B3AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAD7C2701B8B780800D6B3AB /* Main.storyboard */; };
+		DAD7C2741B8B917F00D6B3AB /* PNChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD7C2731B8B917F00D6B3AB /* PNChartColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +72,6 @@
 		DA481A4B1B4DF43700A3B37D /* PushButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushButtonView.swift; sourceTree = "<group>"; };
 		DA481A4C1B4DF43700A3B37D /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		DA481A4D1B4DF43700A3B37D /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		DA481A531B4DF46700A3B37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAB7EACF1B4DF069003E39C7 /* FocusTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB7EAD21B4DF069003E39C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAB7EAD41B4DF069003E39C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +85,9 @@
 		DAB7EAF11B4DF069003E39C7 /* FocusTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FocusTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB7EAF51B4DF069003E39C7 /* FocusTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusTrackerUITests.swift; sourceTree = "<group>"; };
 		DAB7EAF71B4DF069003E39C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAD7C26D1B8B6EDC00D6B3AB /* FocusTracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FocusTracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		DAD7C2711B8B780800D6B3AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DAD7C2731B8B917F00D6B3AB /* PNChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNChartColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,7 @@
 				DA481A411B4DF3B100A3B37D /* Env.swift */,
 				DA481A421B4DF3B100A3B37D /* ExamplesDefaults.swift */,
 				DA481A401B4DF3B100A3B37D /* AFDateExtension.swift */,
+				DAD7C2731B8B917F00D6B3AB /* PNChartColors.swift */,
 			);
 			name = Extensions;
 			path = FocusTracker;
@@ -172,14 +176,15 @@
 				DA481A491B4DF43700A3B37D /* Events.swift */,
 				DAB7EAD41B4DF069003E39C7 /* ViewController.swift */,
 				DA481A4A1B4DF43700A3B37D /* OptionsViewController.swift */,
-				DA481A541B4DF46700A3B37D /* Main.storyboard */,
 				DA481A4C1B4DF43700A3B37D /* ResultsTableViewController.swift */,
 				DA481A4D1B4DF43700A3B37D /* ResultsViewController.swift */,
+				DAD7C2701B8B780800D6B3AB /* Main.storyboard */,
 				DA481A4B1B4DF43700A3B37D /* PushButtonView.swift */,
 				DAB7EADC1B4DF069003E39C7 /* Assets.xcassets */,
 				DAB7EADE1B4DF069003E39C7 /* LaunchScreen.storyboard */,
 				DAB7EAE11B4DF069003E39C7 /* Info.plist */,
 				DAB7EAD91B4DF069003E39C7 /* FocusTracker.xcdatamodeld */,
+				DAD7C26D1B8B6EDC00D6B3AB /* FocusTracker-Bridging-Header.h */,
 			);
 			path = FocusTracker;
 			sourceTree = "<group>";
@@ -310,8 +315,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD7C2721B8B780800D6B3AB /* Main.storyboard in Resources */,
 				DAB7EAE01B4DF069003E39C7 /* LaunchScreen.storyboard in Resources */,
-				DA481A551B4DF46700A3B37D /* Main.storyboard in Resources */,
 				DAB7EADD1B4DF069003E39C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +397,7 @@
 				DA481A511B4DF43700A3B37D /* ResultsTableViewController.swift in Sources */,
 				DA481A4F1B4DF43700A3B37D /* OptionsViewController.swift in Sources */,
 				DAB7EAD51B4DF069003E39C7 /* ViewController.swift in Sources */,
+				DAD7C2741B8B917F00D6B3AB /* PNChartColors.swift in Sources */,
 				DA481A4E1B4DF43700A3B37D /* Events.swift in Sources */,
 				DAB7EADB1B4DF069003E39C7 /* FocusTracker.xcdatamodeld in Sources */,
 				DA481A441B4DF3B100A3B37D /* AFDateExtension.swift in Sources */,
@@ -432,21 +438,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DA481A541B4DF46700A3B37D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DA481A531B4DF46700A3B37D /* Base */,
-			);
-			name = Main.storyboard;
-			path = ../../../FocusTracker/FocusTracker;
-			sourceTree = "<group>";
-		};
 		DAB7EADE1B4DF069003E39C7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DAB7EADF1B4DF069003E39C7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DAD7C2701B8B780800D6B3AB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAD7C2711B8B780800D6B3AB /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -538,10 +543,13 @@
 			baseConfigurationReference = 35B6A1F1AE87B580AE54B727 /* Pods-FocusTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FocusTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Info.insignificant.FocusTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FocusTracker/FocusTracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -550,10 +558,12 @@
 			baseConfigurationReference = 796626B33337CBC59E7D4A70 /* Pods-FocusTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FocusTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Info.insignificant.FocusTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FocusTracker/FocusTracker-Bridging-Header.h";
 			};
 			name = Release;
 		};

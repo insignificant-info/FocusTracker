@@ -8,7 +8,10 @@
 
 import UIKit
 import CoreData
-import SwiftCharts
+import PNChart
+
+
+
 
 
 @IBDesignable
@@ -17,53 +20,54 @@ import SwiftCharts
 
 class ResultsViewController: UIViewController{
 
-    //CHARTING
+    //SWIFT CHART CHARTING
     
-    private var chart: Chart?
+//    private var chart: Chart?
+//    
+//    private enum MyExampleModelDataType {
+//        case Type0, Type1, Type2, Type3
+//    }
+//    
+//    private enum Shape {
+//        case Triangle, Square, Circle, Cross
+//    }
+//    
+//    private func toLayers(models: [(x: CGFloat, y: CGFloat, type: MyExampleModelDataType)], layerSpecifications: [MyExampleModelDataType : (shape: Shape, color: UIColor)], xAxis: ChartAxisLayer, yAxis: ChartAxisLayer, chartInnerFrame: CGRect) -> [ChartLayer] {
+//        
+//        // group chartpoints by type
+//        let groupedChartPoints: Dictionary<MyExampleModelDataType, [ChartPoint]> = models.reduce(Dictionary<MyExampleModelDataType, [ChartPoint]>()) {(var dict, model) in
+//            let chartPoint = ChartPoint(x: ChartAxisValueFloat(model.x), y: ChartAxisValueFloat(model.y))
+//            if dict[model.type] != nil {
+//                dict[model.type]!.append(chartPoint)
+//                
+//            } else {
+//                dict[model.type] = [chartPoint]
+//            }
+//            return dict
+//        }
+//        
+//        // create layer for each group
+//        let dim: CGFloat = Env.iPad ? 14 : 7
+//        let size = CGSizeMake(dim, dim)
+//        let layers: [ChartLayer] = groupedChartPoints.map {(type, chartPoints) in
+//            let layerSpecification = layerSpecifications[type]!
+//            switch layerSpecification.shape {
+//            case .Triangle:
+//                return ChartPointsScatterTrianglesLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
+//            case .Square:
+//                return ChartPointsScatterSquaresLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
+//            case .Circle:
+//                return ChartPointsScatterCirclesLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
+//            case .Cross:
+//                return ChartPointsScatterCrossesLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
+//            }
+//        }
+//        
+//        return layers
+//    }
     
-    private enum MyExampleModelDataType {
-        case Type0, Type1, Type2, Type3
-    }
-    
-    private enum Shape {
-        case Triangle, Square, Circle, Cross
-    }
-    
-    private func toLayers(models: [(x: CGFloat, y: CGFloat, type: MyExampleModelDataType)], layerSpecifications: [MyExampleModelDataType : (shape: Shape, color: UIColor)], xAxis: ChartAxisLayer, yAxis: ChartAxisLayer, chartInnerFrame: CGRect) -> [ChartLayer] {
-        
-        // group chartpoints by type
-        let groupedChartPoints: Dictionary<MyExampleModelDataType, [ChartPoint]> = models.reduce(Dictionary<MyExampleModelDataType, [ChartPoint]>()) {(var dict, model) in
-            let chartPoint = ChartPoint(x: ChartAxisValueFloat(model.x), y: ChartAxisValueFloat(model.y))
-            if dict[model.type] != nil {
-                dict[model.type]!.append(chartPoint)
-                
-            } else {
-                dict[model.type] = [chartPoint]
-            }
-            return dict
-        }
-        
-        // create layer for each group
-        let dim: CGFloat = Env.iPad ? 14 : 7
-        let size = CGSizeMake(dim, dim)
-        let layers: [ChartLayer] = groupedChartPoints.map {(type, chartPoints) in
-            let layerSpecification = layerSpecifications[type]!
-            switch layerSpecification.shape {
-            case .Triangle:
-                return ChartPointsScatterTrianglesLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
-            case .Square:
-                return ChartPointsScatterSquaresLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
-            case .Circle:
-                return ChartPointsScatterCirclesLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
-            case .Cross:
-                return ChartPointsScatterCrossesLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: chartInnerFrame, chartPoints: chartPoints, itemSize: size, itemFillColor: layerSpecification.color)
-            }
-        }
-        
-        return layers
-    }
-    
-    // END CHARTING
+    // END SWIFT CHART CHARTING
+
     @IBOutlet weak var focusDurationTime: UIView?
 
     // Create an empty array of LogItem's
@@ -299,17 +303,17 @@ class ResultsViewController: UIViewController{
             }
         }
 
-//        var dataSeries1X : Array<Double> = []
-//        var dataSeries1Y : Array<Double> = []
-//        var dataSeries2X : Array<Double> = []
-//        var dataSeries2Y : Array<Double> = []
+        var dataSeries1X : Array<Double> = []
+        var dataSeries1Y : Array<Double> = []
+        var dataSeries2X : Array<Double> = []
+        var dataSeries2Y : Array<Double> = []
         var consecutiveFocusPeriodValue : [Int] = []
         var testMinutesInHour = 0
         var hourOfPreviousElement = -1 //initialize with a value that can't be associated with an hour
         var labels: Array<Int> = []
         var labelsAsString: Array<String> = []
 
-        var models: [(x: CGFloat, y: CGFloat, type: MyExampleModelDataType)] = []
+//        var models: [(x: CGFloat, y: CGFloat, type: MyExampleModelDataType)] = []
         
 
         
@@ -379,16 +383,16 @@ class ResultsViewController: UIViewController{
                     
                     //Break up the data into two serieses one for control, one for experiment
                     if controlIndex == 0 {
-//                        dataSeries1X.append(Double(hourOfPreviousElement))
-//                        dataSeries1Y.append(yValue)
+                        dataSeries1X.append(Double(hourOfPreviousElement))
+                        dataSeries1Y.append(yValue)
 
                   
-                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: MyExampleModelDataType.Type1)
+//                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: MyExampleModelDataType.Type1)
                        
                     } else {
-//                        dataSeries2X.append(Double(hourOfPreviousElement))
-//                        dataSeries2Y.append(yValue)
-                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: MyExampleModelDataType.Type2)
+                        dataSeries2X.append(Double(hourOfPreviousElement))
+                        dataSeries2Y.append(yValue)
+//                        models.append(x: CGFloat(hourOfPreviousElement),y: CGFloat(yValue),type: MyExampleModelDataType.Type2)
                     }
                     
                     if index != (dateAssociatedWithMinuteChunks.count - 1) {
@@ -429,35 +433,90 @@ class ResultsViewController: UIViewController{
 //        SetChart(dataSeries1X, y1Values: dataSeries1Y, x2Values: dataSeries2X, y2Values: dataSeries2Y, chartVariable: focusDurationTime)
         
         
-//        // MARK: CHARTING
+//        START PNChart Charting
+        
+        
+
+//        let scatterChart: PNScatterChart = PNScatterChart(frame: CGRectMake(0, 0, focusDurationTime!.frame.size.width, focusDurationTime!.frame.size.height))
+        
+//        let scatterChart: PNScatterChart = PNScatterChart(frame: CGRectMake(0, 50, self.view.frame.size.width, self.view.frame.size.height * 0.8))
+        
+        
+        let fakeX = [2,3,5,6,5,4,3,6,10,3]
+        let fakeY = [4,7,3,2,5,7,9,1,5,10]
+        
+        
+
+        
+        let scatterChart: PNScatterChart = PNScatterChart(frame: CGRectMake(0, 0, focusDurationTime!.frame.size.width * 0.6, focusDurationTime!.frame.size.height * 0.8))
+        
+        scatterChart.setAxisXWithMinimumValue(0, andMaxValue: 15, toTicks: 5)
+        scatterChart.setAxisYWithMinimumValue(0, andMaxValue: 15, toTicks: 5)
+        
+        scatterChart.showCoordinateAxis = true
+        
+        scatterChart.setup()
+//        scatterChart.setNeedsDisplay()
+        
+        
+   
+        let data01: PNScatterChartData = PNScatterChartData()
+        data01.strokeColor = PNGreen
+        data01.fillColor = PNFreshGreen
+        data01.size = 2
+        data01.itemCount = UInt(fakeX.count)
+        data01.inflexionPointStyle = PNScatterChartPointStyle.Circle
+        
+        data01.getData = ({(index: UInt) -> PNScatterChartDataItem in
+//            let yValue:CGFloat = CGFloat(dataSeries1Y[Int(index)])
+//            let xValue:CGFloat = CGFloat(dataSeries1X[Int(index)])
+            let yValue:CGFloat = CGFloat(fakeY[Int(index)])
+            let xValue:CGFloat = CGFloat(fakeX[Int(index)])
+            let item = PNScatterChartDataItem(x: xValue, andWithY: yValue)
+            return item
+        })
+        
+        scatterChart.chartData = [data01]
+        
+        focusDurationTime?.addSubview(scatterChart)
+//        self.view.addSubview(scatterChart)
+        
+
+        
+        
+        
+//        END PNChartCharting
+        
+        
+//        // MARK: SWIFT CHART CHARTING
         //This if statement is for initializing. Otherwise the for loop crashes when there are no events stored
-        if (hourOfPreviousElement == -1) {xMin = 7; xMax = 11}
-        
-                for i in xMin...xMax {
-        
-                    switch i {
-                    case 0:
-                        let hourAsString: String = "12"
-                        labelsAsString.append(hourAsString)
-                        labels.append(Int(12))
-                    case 1...11:
-                        let hourAsString: String = "\(i)"
-                        labelsAsString.append(hourAsString)
-                        labels.append(i)
-                    case 12:
-                        let hourAsString: String = "\(i)"
-                        labelsAsString.append(hourAsString)
-                        labels.append(i)
-                    case 13...23:
-                        let hourAsString: String = "\(i - 12)"
-                        labelsAsString.append(hourAsString)
-                        labels.append(i - 12)
-                    default:
-                        let hourAsString: String = "\(i)"
-                        labelsAsString.append(hourAsString)
-                        labels.append(i)
-                    }
-                }
+//        if (hourOfPreviousElement == -1) {xMin = 7; xMax = 11}
+//        
+//                for i in xMin...xMax {
+//        
+//                    switch i {
+//                    case 0:
+//                        let hourAsString: String = "12"
+//                        labelsAsString.append(hourAsString)
+//                        labels.append(Int(12))
+//                    case 1...11:
+//                        let hourAsString: String = "\(i)"
+//                        labelsAsString.append(hourAsString)
+//                        labels.append(i)
+//                    case 12:
+//                        let hourAsString: String = "\(i)"
+//                        labelsAsString.append(hourAsString)
+//                        labels.append(i)
+//                    case 13...23:
+//                        let hourAsString: String = "\(i - 12)"
+//                        labelsAsString.append(hourAsString)
+//                        labels.append(i - 12)
+//                    default:
+//                        let hourAsString: String = "\(i)"
+//                        labelsAsString.append(hourAsString)
+//                        labels.append(i)
+//                    }
+//                }
         
 //        for i in xMin...xMax {
 //            
@@ -485,46 +544,46 @@ class ResultsViewController: UIViewController{
 //            }
 //        }
         
+//        
+//        // map model data to chart points
+//        let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont)
+//        
+//        
+//        let layerSpecifications: [MyExampleModelDataType : (shape: Shape, color: UIColor)] = [
+//            .Type0 : (.Triangle, UIColor.redColor()),
+//            .Type1 : (.Square, UIColor.blueColor()),
+//            .Type2 : (.Circle, UIColor.greenColor()),
+//            .Type3 : (.Cross, UIColor.blackColor())
+//        ]
+//        
+//        let xValues = labels.map {ChartAxisValueInt($0, labelSettings: labelSettings)}
+//        let yValues = Array(stride(from: 0, through: 300, by: 50)).map {ChartAxisValueInt($0, labelSettings: labelSettings)}
+//        
+//        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
+//        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
+//        
+//        let chartFrame = ExamplesDefaults.chartFrame(self.view.bounds)
+//        let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: ExamplesDefaults.chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
+//        let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
+//        
+//        let scatterLayers = self.toLayers(models, layerSpecifications: layerSpecifications, xAxis: xAxis, yAxis: yAxis, chartInnerFrame: innerFrame)
+//        
+//        let guidelinesLayerSettings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: ExamplesDefaults.guidelinesWidth)
+//        let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: guidelinesLayerSettings)
+//        
+//        let chart = Chart(
+//            frame: chartFrame,
+//            layers: [
+//                xAxis,
+//                yAxis,
+//                guidelinesLayer
+//                ] + scatterLayers
+//        )
+//        
+//        self.view.addSubview(chart.view)
+//        self.chart = chart
         
-        // map model data to chart points
-        let labelSettings = ChartLabelSettings(font: ExamplesDefaults.labelFont)
-        
-        
-        let layerSpecifications: [MyExampleModelDataType : (shape: Shape, color: UIColor)] = [
-            .Type0 : (.Triangle, UIColor.redColor()),
-            .Type1 : (.Square, UIColor.blueColor()),
-            .Type2 : (.Circle, UIColor.greenColor()),
-            .Type3 : (.Cross, UIColor.blackColor())
-        ]
-        
-        let xValues = labels.map {ChartAxisValueInt($0, labelSettings: labelSettings)}
-        let yValues = Array(stride(from: 0, through: 300, by: 50)).map {ChartAxisValueInt($0, labelSettings: labelSettings)}
-        
-        let xModel = ChartAxisModel(axisValues: xValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
-        let yModel = ChartAxisModel(axisValues: yValues, axisTitleLabel: ChartAxisLabel(text: "Axis title", settings: labelSettings))
-        
-        let chartFrame = ExamplesDefaults.chartFrame(self.view.bounds)
-        let coordsSpace = ChartCoordsSpaceLeftBottomSingleAxis(chartSettings: ExamplesDefaults.chartSettings, chartFrame: chartFrame, xModel: xModel, yModel: yModel)
-        let (xAxis, yAxis, innerFrame) = (coordsSpace.xAxis, coordsSpace.yAxis, coordsSpace.chartInnerFrame)
-        
-        let scatterLayers = self.toLayers(models, layerSpecifications: layerSpecifications, xAxis: xAxis, yAxis: yAxis, chartInnerFrame: innerFrame)
-        
-        let guidelinesLayerSettings = ChartGuideLinesDottedLayerSettings(linesColor: UIColor.blackColor(), linesWidth: ExamplesDefaults.guidelinesWidth)
-        let guidelinesLayer = ChartGuideLinesDottedLayer(xAxis: xAxis, yAxis: yAxis, innerFrame: innerFrame, settings: guidelinesLayerSettings)
-        
-        let chart = Chart(
-            frame: chartFrame,
-            layers: [
-                xAxis,
-                yAxis,
-                guidelinesLayer
-                ] + scatterLayers
-        )
-        
-        self.view.addSubview(chart.view)
-        self.chart = chart
-        
-//        // MARK: END CHARTING
+//        // MARK: END SWIFT CHART CHARTING
         
 
         
